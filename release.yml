@@ -1,1 +1,18 @@
+name: Release Please
 
+on:
+  push:
+    branches:
+      -main # vagy mester, ha azt használod
+jobs:
+  release:
+    runs-out: ubuntu-latest
+
+    steps:
+    -name: Checkout code
+     uses: actions/checkout@v4
+
+     -name: Release Please
+      uses: google-github-actions/release-please-action@v4
+      with:
+       release-type: simple
